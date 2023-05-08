@@ -1,1 +1,5 @@
-
+<body>{
+  backround: url(img.jpg);
+  backround-size: cover;
+  font-family: Playfair;
+  }
