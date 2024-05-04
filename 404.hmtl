@@ -1,9 +1,16 @@
-<DOCTYPE! html>
-  <html>
-  <head>
-  <tittle> Error page</tittle>
+
+<!DOCTYPE html>
+<html>
+  <head> 
+    <Title> Error </Title> 
   </head>
   <body>
-<p> wrong password </p>
+    <H1>
+  Error
+    </H1>
+    <p>
+     You either put in the wrong password, or clicked canlcel
+
+    </p>
   </body>
 </html>
