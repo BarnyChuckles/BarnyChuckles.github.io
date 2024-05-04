@@ -1,0 +1,8 @@
+<DOCTYPE! html>
+  <html>
+  <head>
+  <tittle> Error page</tittle>
+  </head>
+  <body>
+<p> wrong password </p>
+  </body>
