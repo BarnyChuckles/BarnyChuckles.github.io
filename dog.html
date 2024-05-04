@@ -7,15 +7,22 @@
             var password = prompt("Please enter the password to view this page", "");
             if (password != "t.s.c.o.p.h.m.c.m.m.t.l.m.g.a.d.") {
                 window.location = "https://BarnyChuckles.github.io/dog.html";
+               // Redirect to the password prompt page
+        window.location.replace("https://yourwebsite.com/password-prompt.html");
             }
         }
     </script>
 </head>
 <body onload="passwordProtect();">
+  
     <h1> Good job! you made it here!
     </h1>
     <p>
       Ok, so my mom doesn't want us to get a dog. If you are on my team, you are trying to help me convince my mom (in case you couldn't tell by the tittle). 
     </p>
+   <script>
+        // After successful authentication
+        document.getElementById("content").style.display = "block";
+    </script>
   </body>
 </html>
