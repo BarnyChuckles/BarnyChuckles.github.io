@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login with Local Storage</title>
+    <script>
+        // Check if user is already logged in
+        window.onload = function() {
+    if (localStorage.getItem("username")) {  // If username is saved
+        document.getElementById("status").innerText = "You are logged in as " + localStorage.getItem("username");
+        document.getElementById("loginForm").style.display = "none";  // Hide login form
+        document.getElementById("logoutButton").style.display = "inline";  // Show logout button
+    } else {  // If no username is saved
+        document.getElementById("logoutButton").style.display = "none";  // Hide logout button
+    }
+}
+
+        // Handle login form submission
+        function login() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            if (username && password) {
+                // Save user info in local storage
+                localStorage.setItem("username", username);
+                document.getElementById("status").innerText = "You are logged in as " + username;
+                document.getElementById("loginForm").style.display = "none";  // Hide login form
+            } else {
+                alert("Please enter both username and password.");
+            }
+        }
+
+        // Handle logout
+        function logout() {
+            localStorage.removeItem("username");
+            document.getElementById("status").innerText = "You are logged out.";
+            document.getElementById("loginForm").style.display = "block";  // Show login form again
+        }
+    </script>
+</head>
+<body>
+    <h1>Login</h1>
+
+    <!-- Display login form if not logged in -->
+    <div id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <button type="button" onclick="login()">Login</button>
+    </div>
+
+    <!-- Display login status -->
+    <div id="status"></div>
+
+    <!-- Display logout button if logged in -->
+    <button id="logoutButton" type="button" onclick="logout()" style="display: none;">Logout</button>
+
+</body>
+</html>
